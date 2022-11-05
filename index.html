@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>ScoreBoard App</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
+    </head>
+
+    <body>
+        <video playsinline autoplay muted loop poster="polina.jpg">
+            <source src="./assets/videos/bg-video.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <div class="container">
+            <h1 id="title">Teams</h1>
+            <div id="score-board">  
+                <div class="team">
+                    <h2 class="team-title home">
+                        <span class="hide-laptop">
+                            <i class='bx bxs-home' ></i>
+                        </span>
+                        <span class="hide-mobile">
+                            Home
+                        </span>
+                    </h2>
+                    <div class="score-card bg-black">
+                        <h3 id="scores-home" class="scores">0</h3>
+                    </div>
+                    <div class="btns-wrapper">
+                        <button id="home-add-one" class="btn" onclick="addOneHome()">+1</button>
+                        <button id="home-add-two" class="btn" onclick="addTwoHome()">+2</button>
+                        <button id="home-add-three" class="btn" onclick="addThreeHome()">+3</button>
+                    </div>
+                </div>
+                <div class="dots-container">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="team">
+                    <h2 class="team-title guest">
+                        <span class="hide-laptop">
+                            <i class='bx bxs-plane'></i>
+                        </span>
+                        <span class="hide-mobile">
+                            Guest
+                        </span>
+                    </h2>
+                    <div class="score-card bg-black">
+                        <h3 id="scores-guest" class="scores">0</h3>
+                    </div>
+                    <div class="btns-wrapper">
+                        <button id="guest-add-one" class="btn" onclick="addOneGuest()">+1</button>
+                        <button id="guest-add-two" class="btn" onclick="addTwoGuest()">+2</button>
+                        <button id="guest-add-three" class="btn" onclick="addThreeGuest()">+3</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-new-game" onclick="newGame()">New Game</button>
+        </div>
+        <script src="./assets/js/app.js"></script>
+    </body>
+
+</html>

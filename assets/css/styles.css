@@ -1,0 +1,291 @@
+/* IMPORT CUSTOM FONT */
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Digital Numbers Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Digital Numbers Regular'), url('/assets/fonts/digital-numbers-cufonfonts-webfont/DigitalNumbers-Regular.woff') format('woff');
+}
+
+/* DECLARE CSS VARIABLES */
+
+:root {
+    /* Fonts */
+    --ff-text: 'Goldman', cursive;
+    --ff-numbers: 'Digital Numbers Regular', 'Goldman', sans-serif;
+
+    /* Colors */
+
+    --colorBG-scoreBoard: hsla(0, 95%, 41%, 0.96);
+    --colorBG-scoreCard: hsla(0, 0%, 0%, 0.8);
+    --colorBG-overlay: hsla(0, 69%, 22%, 0.248);
+    --colorFont-text: hsla(0, 0%, 100%, 1);
+}
+
+/* RESET DEFAULT CSS SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--ff-text);
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.25rem;
+    position: relative;
+    color: var(--colorFont-text);
+    /* background: url(../videos/Untitled.mp4); */
+    /* background: repeating-linear-gradient(
+        90deg,
+        rgb(200, 200, 200) 0%,
+        rgb(178, 255, 255) 6%,
+        rgb(255, 220, 200) 10%
+    ); */
+}
+
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--colorBG-overlay);
+    /* background: linear-gradient(
+        45deg,
+        hsla(0, 0%, 78%, 0.5),
+        hsla(180, 100%, 85%, 0.5),
+        hsla(22, 100%, 89%, 0.5)
+    ); */
+}
+
+button {
+    display: inline-block;
+    font-family: var(--ff-text);
+    font-weight: normal;
+    background-color: transparent;
+    border: 1px solid var(--colorFont-text);
+    color: var(--colorFont-text);
+    border-radius: 3px;
+}
+
+/* CUSTOM CSS STYLING */
+
+/* Reusable CSS Classes */
+
+.scores, .btn {
+    font-family: var(--ff-numbers);
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    width: 83.34%;
+    max-width: 420px;
+    height: 350px;
+    background-color: var(--colorBG-scoreBoard);
+    margin: auto;
+    padding: 3rem 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-evenly;
+    row-gap: 3rem;
+    border-radius: 5px;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 2.4rem;
+}
+
+#score-board {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.team {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hide-laptop {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--colorFont-text);
+    border-radius: 3px;
+}
+
+.hide-laptop i {
+    font-size: 3rem;
+}
+
+.hide-mobile {
+    display: none;
+}
+
+.score-card {
+    min-width: 120px;
+    width: auto;
+    min-height: 70px;
+    height: auto;
+    background-color: var(--colorBG-scoreCard);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.scores {
+    font-size: 4rem;
+}
+
+.btns-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.btns-wrapper .btn {
+    width: 50px;
+    height: 20px;
+    letter-spacing: 0.25rem;
+}
+
+.dots-container {
+    display: none;
+}
+
+.btn-new-game {
+    width: 120px;
+    height: 30px;
+    margin: auto;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+}
+
+
+/* MEDIA-QUERIES / SCREEN BREAKPOINTS */
+
+@media screen and (min-width: 768px) {
+
+    /* CUSTOM CSS STYLING */
+
+    .container {
+        width: 600px;
+        max-width: 100%;
+        height: 400px;
+        padding: 3rem 6rem;
+        row-gap: 3rem;
+    }
+
+    #title {
+        font-size: 3.4rem;
+    }
+
+    #score-board {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .team {
+        width: 100%;
+        height: 85%;
+        flex-direction: column;
+    }
+
+    .hide-laptop {
+        display: none;
+    }
+
+    .hide-mobile {
+        display: block;
+        font-size: 2.6rem;
+        font-weight: bold;
+    }
+
+    .score-card {
+        min-width: 160px;
+        min-height: 80px;
+    }
+
+    .scores {
+        font-size: 5rem;
+    }
+
+    .btns-wrapper {
+        width: 160px;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .btns-wrapper .btn {
+        width: 45px;
+    }
+
+    .dots-container {
+        width: 100%;
+        height: 38%;
+        margin-top: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .dots-container .dot {
+        width: 20px;
+        height: 20px;
+        background-color: var(--colorFont-text);
+        border-radius: 3px;
+    }
+
+    .btn-new-game {
+        width: 140px;
+        height: 50px;
+    }
+}
