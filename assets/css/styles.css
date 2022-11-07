@@ -91,6 +91,7 @@ button {
     border: 1px solid var(--colorFont-text);
     color: var(--colorFont-text);
     border-radius: 3px;
+    cursor: pointer;
 }
 
 /* CUSTOM CSS STYLING */

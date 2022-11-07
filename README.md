@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/sevvy-thewebcoder/nft-preview-card)
-- Live Site URL: [NFT-Preview-Card](https://sevvy-thewebcoder.github.io/nft-preview-card/)
+- Solution URL: [GitHub](https://github.com/sevvy-thewebcoder/scoreboard-app)
+- Live Site URL: [ScoreBoard-App](https://basketball-scorecounter.netlify.app/)
 
 ## My process
 
